@@ -44,12 +44,22 @@ h2, h1{
 	z-index:1151;
 }
 
-.badge-warning {
-  background-color: #f89406;
-}
+.badge-warning { background-color: #f89406; }
+.badge-error { background-color: #b94a48; }
+.badge-info { background-color: #3A87AD; }
 
-.badge-error {
-  background-color: #b94a48;
+/*** PROBLEMS PAGE ***/
+.alert > h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.alert > h4 {
+	margin-top: 1em;
+	margin-bottom: 0;
+	margin-left: 3px;
+}
+.alert > a {
+	text-decoration: none;
 }
 
 /*** ZOOM-ABLE GRAPHS VIEW ***/
