@@ -44,6 +44,14 @@ h2, h1{
 	z-index:1151;
 }
 
+.badge-warning {
+  background-color: #f89406;
+}
+
+.badge-error {
+  background-color: #b94a48;
+}
+
 /*** ZOOM-ABLE GRAPHS VIEW ***/
 div.maincategory {
 	display: inline-block;
