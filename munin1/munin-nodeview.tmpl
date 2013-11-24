@@ -1,0 +1,21 @@
+
+<div class="title">
+   <TMPL_VAR ESCAPE='HTML' NAME='NAME'>
+</div>
+
+<TMPL_LOOP NAME="CATEGORIES">
+   <div class="maincategory">
+      <div class="title"><TMPL_VAR ESCAPE='HTML' NAME='NAME'></div>
+      <TMPL_LOOP NAME="SERVICES">
+         <div class="graph">
+            <!-- NOTE: do not change this link.href, unless you also change the js that parse it -->
+            <a href="javascript:LoadService('<TMPL_VAR NAME='URL'>');"><TMPL_VAR ESCAPE='HTML' NAME='NAME'></a>
+            <img class="<TMPL_IF NAME='STATE_CRITICAL'>crit</TMPL_IF><TMPL_IF NAME='STATE_WARNING'>warn</TMPL_IF>"
+                 src=""/>
+         </div>
+      </TMPL_LOOP><!-- End of SERVICES loop -->
+   </div>
+</TMPL_LOOP><!-- End of CATEGORIES loop -->
+
+
+

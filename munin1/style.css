@@ -1,0 +1,198 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html { overflow-y: scroll; } /* scrollbar always visible */
+
+
+body {
+  font-family: "vera sans", "dejavu sans", helvetica, verdana, arial, sans-serif;
+  color: #333333;
+  font-size: 90%;
+}
+
+div.contents {
+  margin-left: 200px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+/*border: 1px solid red;*/
+}
+
+div.dynview {
+  white-space: nowrap;
+/*border: 1px solid green;*/
+}
+
+div.dynview > div.title{
+/*
+  text-align: center;
+*/
+  font-size: 3.2em;
+  letter-spacing: 4px;
+  font-style: italic;
+  margin-bottom: 5px;
+  margin-left: 150px;
+/*border: 1px dotted gray;*/
+}
+
+
+/***  NAVIGATOR  ***/
+div.navigator {
+  width: 175px;
+  height: 100%;
+  position: fixed;
+  background-color: #ebebeb;
+  border-right: 2px solid #cfd6f8;
+  padding: 10px 3px 1px 3px;
+  box-shadow: 0px 3px 10px #888;
+  text-align: center;
+}
+div.navigator input[type="radio"], div.navigator label {
+  font-size: small;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+div.navigator div.tree {
+/*height: 80%;
+  overflow: auto;
+  border: 1px solid red;
+  margin-bottom: 50px;*/
+  border-top: 1px solid #CCCCCC;
+}
+div.navigator  ul {
+  margin-top: 10px;
+  text-align: left;
+  list-style: none;
+  padding-left: 5px;
+}
+div.navigator ul ul {
+  margin-top: 0px;
+  padding-left: 15px;
+  font-size: small;
+}
+div.navigator ul ul ul{
+  padding-left: 5px;
+}
+div.navigator span.domain { font-weight: bold;  font-style: italic;}
+div.navigator span.host {  }
+div.navigator span.category { font-size: 7px; display: none; }
+
+
+/***  FOOTER  ***/
+div.footer {
+  position: fixed;
+  width: 175px;
+  height: 32px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 0.7em;
+  font-style: italic;
+  color: #555555;
+  text-align: center;     /* MA CAZZO !!!! */
+  vertical-align: bottom; /* MA CAZZO !!!! */
+  border-top: 1px solid #CCCCCC;
+}
+
+/*** ZOOM-ABLE GRAPHS VIEW ***/
+div.maincategory {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+  text-align: center;
+  margin-left: 7px;
+  margin-right: 7px;
+  white-space: normal;
+/*border: 1px solid blue;*/
+}
+
+div.maincategory div.title {
+  font-family: serif;
+  width: 100%;
+  font-size: 1.4em;
+  border-bottom: 2px solid gray;
+  margin-bottom: 10px;
+}
+div.maincategory a {
+  font-style: italic;
+  font-size: smaller;
+}
+div.maincategory img {
+  width: 100%;
+  box-shadow: 0px 0px 2px #888;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/*** TABLE IN THE SERVICE PAGE ***/
+#legend {
+  margin: 2px;
+}
+#legend tr, #legend td {
+  padding: 3px 2px 3px 2px;
+  margin: 1px;
+}
+#legend th {
+  border-bottom: 1px solid #999999;
+  white-space: nowrap
+}
+#legend .oddrow { background-color: #f0f0f0; }
+#legend .evenrow { background-color: #fdfdfd; }
+#legend .oddrow td { border-bottom: 1px solid #d8d8d8; }
+#legend .evenrow td { border-bottom: 1px solid #d8d8d8; }
+#legend .lastrow td { border-bottom: 0px solid transparent !important; }
+#legend td.legendbox {
+  border: 1px solid #999999;
+  padding: 8px 4px 2px 2px;
+  margin: 8px 2px 2px 2px;
+  text-align: left;
+  width: 90%;
+}
+#legend td.wrap {
+   white-space: normal;
+   width: 30%;
+}
+#legend .warntext {
+  font-weight: bold;
+  background-color: #cccc00;
+  padding: 0px;
+  margin: -1px;
+  border: 1px solid #b9b900;
+}
+#legend .crittext {
+  font-weight: bold;
+  background-color: #ff6f22;
+  padding: 0px;
+  margin: -1px;
+  border: 1px solid #f16722;
+}
+
+
+/*** WARNING & CRITICAL ***/
+a.unkn:link    { color: #ffaa00; }
+a.unkn:visited { color: #ffaa00; }
+a.unkn:active  { color: #ffaa00; }
+a.unkn:hover   { color: #ffaa00; }
+
+a.warn:link    { color: #ffd300; }
+a.warn:visited { color: #ffd300; }
+a.warn:active  { color: #ffd300; }
+a.warn:hover   { color: #ffd300; }
+span.warn      { color: #ffd300; font-style: italic; }
+
+a.crit:link    { color: #ff0000; }
+a.crit:visited { color: #ff0000; }
+a.crit:active  { color: #ff0000; }
+a.crit:hover   { color: #ff0000; }
+span.crit      { color: #ff0000; font-style: italic; }
+
+a:link    { color: #486aaf; text-decoration: none; }
+a:visited { color: #486aaf; text-decoration: none; }
+a:active  { color: #486aaf; text-decoration: none; }
+a:hover   { color: #486aaf; text-decoration: underline; }
+
+img.warn  { border: 2px solid #ffd300; }
+img.crit  { border: 2px solid #ff0000; }
+img.unkn  { border: 2px solid #ffaa00; }
+

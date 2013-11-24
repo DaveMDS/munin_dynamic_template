@@ -1,0 +1,28 @@
+<TMPL_INCLUDE NAME='partial/head.tmpl'>
+
+<body>
+
+<TMPL_INCLUDE NAME='partial/navigation.tmpl'>
+
+<div class="content">
+	<h2><b>Host:</b> <i><TMPL_VAR ESCAPE='HTML' NAME='NAME'></i></h2>
+
+	<TMPL_LOOP NAME="CATEGORIES">
+		<div class="maincategory">
+			<div class="title"><TMPL_VAR ESCAPE='HTML' NAME='NAME'></div>
+			<TMPL_LOOP NAME="SERVICES">
+				<div class="graph">
+					<a href="<TMPL_VAR NAME='URLX'>"><TMPL_VAR ESCAPE='HTML' NAME='NAME'></a>
+					<img class="<TMPL_IF NAME='STATE_CRITICAL'>crit</TMPL_IF><TMPL_IF NAME='STATE_WARNING'>warn</TMPL_IF>"
+					       src="<TMPL_VAR NAME='IMGDAY'>"/>
+				</div>
+			</TMPL_LOOP><!-- End of SERVICES loop -->
+		</div>
+	</TMPL_LOOP><!-- End of CATEGORIES loop -->
+
+</div>
+
+<TMPL_INCLUDE NAME='partial/footer.tmpl'>
+
+</body>
+</html>

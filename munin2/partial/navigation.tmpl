@@ -1,0 +1,125 @@
+<!--
+<div id="nav">
+	<p class="navigationjump"><a href="#content">Skip navigation</a></p>
+	<h2>Problems</h2>
+	<ul>
+		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#critical">Critical</a> (<TMPL_VAR NAME="NCRITICAL">)</li>
+		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#warnings">Warning</a> (<TMPL_VAR NAME="NWARNING">)</li>
+		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#unknowns">Unknown</a> (<TMPL_VAR NAME="NUNKNOWN">)</li>
+	</ul>
+	<h2>Groups</h2>
+	<ul>
+	<TMPL_LOOP NAME="ROOTGROUPS">
+		<li><a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a></li>
+	</TMPL_LOOP>
+	</ul>
+	<h2>Categories</h2>
+	<ul>
+	<TMPL_LOOP NAME="GLOBALCATS">
+		<li>
+		<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">"><TMPL_VAR NAME="NAME"></a>
+		[
+			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">">d</a>
+			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLWEEK">">w</a>
+			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLMONTH">">m</a>
+			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLYEAR">">y</a>
+		]
+		</li>
+	</TMPL_LOOP>
+	</ul>
+</div>
+-->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<!-- Brand + Period selector -->
+			<div class="btn-group btn-group-xs" data-toggle="buttons">
+				<a class="navbar-brand" href="#">Munin2</a><br>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="per_day" autocomplete="off" onchange="SwitchPeriod('day')">D
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="per_week" autocomplete="off" onchange="SwitchPeriod('week')">W
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="per_month" autocomplete="off" onchange="SwitchPeriod('month')">M
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="per_year" autocomplete="off" onchange="SwitchPeriod('year')">Y
+				</label>
+			</div>
+
+		</div>
+
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+
+				<li><a href="<TMPL_VAR NAME="R_PATH">">Overview</a></li>
+
+				<!-- Groups -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					<TMPL_LOOP NAME="ROOTGROUPS">
+						<li><a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a></li>
+					</TMPL_LOOP>
+					</ul>
+				</li>
+
+				<!-- Categories -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+
+						<TMPL_LOOP NAME="GLOBALCATS">
+							<li>
+								<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">"><TMPL_VAR NAME="NAME"></a>
+							</li>
+						</TMPL_LOOP>
+					</ul>
+				</li>
+
+				<!-- Hosts -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hosts<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+
+						<TMPL_LOOP NAME="ROOTGROUPS">
+							<TMPL_LOOP NAME="GROUPS">
+								<li>
+									<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a>
+								</li>
+							</TMPL_LOOP>
+						</TMPL_LOOP>
+					</ul>
+				</li>
+
+				<!-- Problems -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Problems<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#critical">Critical (<TMPL_VAR NAME="NCRITICAL">)</a></li>
+						<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#warnings">Warning (<TMPL_VAR NAME="NWARNING">)</a></li>
+						<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#unknowns">Unknown (<TMPL_VAR NAME="NUNKNOWN">)</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<!-- Generated xx ago -->
+			<ul class="nav navbar-nav navbar-right">
+				<li><a id="generated" href="javascript:location.reload()">&nbsp;</a></li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+

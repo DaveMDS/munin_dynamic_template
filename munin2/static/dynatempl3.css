@@ -1,0 +1,204 @@
+
+.starter-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+
+/*** NAVBAR ***/
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar > .container .navbar-brand {
+	padding: 3px;
+	margin-left: 0.5em;
+}
+
+#generated {
+	padding: 3px;
+	text-align: center;
+}
+
+/*** CONTENT ***/
+div.content {
+	padding-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+img.i {
+	border: 1px solid #A0A0A0;
+	margin: 3px;
+}
+
+h2, h1{
+	text-align: center;
+}
+
+#ZoomModal > .modal-dialog {
+	width: 966px;
+	height: auto;
+}
+
+.datepicker {
+	z-index:1151;
+}
+
+/*** ZOOM-ABLE GRAPHS VIEW ***/
+div.maincategory {
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+	text-align: center;
+	margin-left: 7px;
+	margin-right: 7px;
+	white-space: normal;
+}
+
+div.maincategory div.title {
+	width: 100%;
+	font-size: 1.4em;
+	border-bottom: 2px solid gray;
+	margin-bottom: 10px;
+}
+
+div.maincategory a {
+	font-style: italic;
+	font-size: smaller;
+}
+
+div.maincategory img {
+	width: 100%;
+	box-shadow: 0px 0px 2px #888;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+/*** WARNING & CRITICAL ***/
+a.unkn:link    { color: #ffaa00; }
+a.unkn:visited { color: #ffaa00; }
+a.unkn:active  { color: #ffaa00; }
+a.unkn:hover   { color: #ffaa00; }
+
+a.warn:link    { color: #ffd300; }
+a.warn:visited { color: #ffd300; }
+a.warn:active  { color: #ffd300; }
+a.warn:hover   { color: #ffd300; }
+span.warn      { color: #ffd300; font-style: italic; }
+
+a.crit:link    { color: #ff0000; }
+a.crit:visited { color: #ff0000; }
+a.crit:active  { color: #ff0000; }
+a.crit:hover   { color: #ff0000; }
+span.crit      { color: #ff0000; font-style: italic; }
+
+/*
+a:link    { color: #486aaf; text-decoration: none; }
+a:visited { color: #486aaf; text-decoration: none; }
+a:active  { color: #486aaf; text-decoration: none; }
+a:hover   { color: #486aaf; text-decoration: underline; }
+*/
+
+img.warn  { border: 2px solid #ffd300; }
+img.crit  { border: 2px solid #ff0000; }
+img.unkn  { border: 2px solid #ffaa00; }
+
+/*** FOOTER ***/
+#footer {
+	margin-top: 3em;
+	margin-right: 20px;
+	margin-left: 20px;
+	text-align: center;
+	border-top: 1px solid #d8d8d8;
+	padding: 3px;
+	font-size: 12px;
+}
+
+/*** SERVICES LEGEND ***/
+#legend {
+	margin: 2px;
+	border-collapse: collapse;
+	color: #666666;
+}
+
+#legend .field, #legend .internal {
+	text-align: left;
+	width: 20em;
+}
+
+#legend .warn, #legend .crit {
+	text-align: center;
+	width: 5em;
+}
+
+#legend .info {
+	text-align: left;
+	width: 20em;
+}
+
+#legend tr, #legend td {
+	padding: 3px 2px 3px 2px;
+	margin: 1px;
+}
+
+#legend th {
+	border-bottom: 1px solid #999999;
+}
+
+#legend .oddrow{
+	background-color: #f8f8f8;
+}
+
+#legend td{
+	border-bottom: 1px solid #d8d8d8;
+}
+
+#legend .evenrow{
+	background-color: #fdfdfd;
+}
+/*
+#legend td.legendbox {
+	border: 1px solid #999999;
+	padding: 8px 4px 2px 2px;
+	margin: 8px 2px 2px 2px;
+	text-align: left;
+	width: 90%;
+}
+
+#legend td.wrap {
+	white-space: normal;
+	width: 20%;
+}
+*/
+#legend .warntext {
+	font-weight: bold;
+	background-color: #cccc00;
+	padding: 0px;
+	margin: -1px;
+	border: 1px solid #b9b900;
+}
+
+#legend .crittext {
+	font-weight: bold;
+	background-color: #ff6f22;
+	padding: 0px;
+	margin: -1px;
+	border: 1px solid #f16722;
+}
+
+#legend td.linkbox {
+	padding: 4px 4px 4px 4px;
+	margin: 10px auto 0px auto;
+	max-width: 97%;
+	width: 90%;
+	min-width: 50%;
+	white-space: normal;
+}
+
+
+
+
+
+
+
+
