@@ -15,8 +15,11 @@
 }
 
 #generated {
+	margin-top: 7px;
 	padding: 3px;
 	text-align: center;
+	font-size: 12px;
+	line-height: 16px;
 }
 
 /*** CONTENT ***/

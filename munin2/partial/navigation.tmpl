@@ -1,36 +1,5 @@
-<!--
-<div id="nav">
-	<p class="navigationjump"><a href="#content">Skip navigation</a></p>
-	<h2>Problems</h2>
-	<ul>
-		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#critical">Critical</a> (<TMPL_VAR NAME="NCRITICAL">)</li>
-		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#warnings">Warning</a> (<TMPL_VAR NAME="NWARNING">)</li>
-		<li><a href="<TMPL_VAR NAME="R_PATH">/problems.html#unknowns">Unknown</a> (<TMPL_VAR NAME="NUNKNOWN">)</li>
-	</ul>
-	<h2>Groups</h2>
-	<ul>
-	<TMPL_LOOP NAME="ROOTGROUPS">
-		<li><a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a></li>
-	</TMPL_LOOP>
-	</ul>
-	<h2>Categories</h2>
-	<ul>
-	<TMPL_LOOP NAME="GLOBALCATS">
-		<li>
-		<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">"><TMPL_VAR NAME="NAME"></a>
-		[
-			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">">d</a>
-			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLWEEK">">w</a>
-			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLMONTH">">m</a>
-			<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLYEAR">">y</a>
-		]
-		</li>
-	</TMPL_LOOP>
-	</ul>
-</div>
--->
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbar">
 	<div class="container">
 
 		<div class="navbar-header">
@@ -43,7 +12,7 @@
 
 			<!-- Brand + Period selector -->
 			<div class="btn-group btn-group-xs" data-toggle="buttons">
-				<a class="navbar-brand" href="#">Munin2</a><br>
+				<a class="navbar-brand" href="#" onclick="$('#navbar').toggleClass('navbar-inverse')">Munin2</a><br>
 				<label class="btn btn-primary">
 					<input type="radio" name="options" id="per_day" autocomplete="off" onchange="SwitchPeriod('day')">D
 				</label>
@@ -65,7 +34,31 @@
 
 				<li><a href="<TMPL_VAR NAME="R_PATH">">Overview</a></li>
 
+				<!-- Hosts -->
+				<li class="dropdown">
+					<a class="dropdown-toggle">Hosts<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<TMPL_LOOP NAME="ROOTGROUPS">
+							<li class="dropdown-header"><TMPL_VAR NAME="NAME"></li>
+							<TMPL_LOOP NAME="GROUPS">
+								<li><a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a></li>
+							</TMPL_LOOP>
+						</TMPL_LOOP>
+					</ul>
+				</li>
+
+				<!-- Categories -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<TMPL_LOOP NAME="GLOBALCATS">
+							<li><a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">"><TMPL_VAR NAME="NAME"></a></li>
+						</TMPL_LOOP>
+					</ul>
+				</li>
+
 				<!-- Groups -->
+<!--
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -74,34 +67,7 @@
 					</TMPL_LOOP>
 					</ul>
 				</li>
-
-				<!-- Categories -->
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-
-						<TMPL_LOOP NAME="GLOBALCATS">
-							<li>
-								<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URLDAY">"><TMPL_VAR NAME="NAME"></a>
-							</li>
-						</TMPL_LOOP>
-					</ul>
-				</li>
-
-				<!-- Hosts -->
-				<li class="dropdown">
-					<a class="dropdown-toggle">Hosts<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-
-						<TMPL_LOOP NAME="ROOTGROUPS">
-							<TMPL_LOOP NAME="GROUPS">
-								<li>
-									<a href="<TMPL_VAR NAME="R_PATH">/<TMPL_VAR NAME="URL">"><TMPL_VAR NAME="NAME"></a>
-								</li>
-							</TMPL_LOOP>
-						</TMPL_LOOP>
-					</ul>
-				</li>
+-->
 
 				<!-- Problems -->
 				<li class="dropdown">
