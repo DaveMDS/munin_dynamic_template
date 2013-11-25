@@ -205,7 +205,8 @@ $(document).ready(function() {
 	SwitchPeriod(period);
 
 	// Popuplate Overview
-	if (typeof overview_data !== 'undefined') {
+	if ((typeof overview_data !== 'undefined') && (overview_data.length > 0)) {
+		$(".content").html('<h1>Overview</h1>');
 		PopulateOverview(period);
 	}
 

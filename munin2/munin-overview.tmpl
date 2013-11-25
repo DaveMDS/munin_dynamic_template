@@ -3,26 +3,7 @@
 <TMPL_INCLUDE NAME="partial/navigation.tmpl">
 
 <script type="text/javascript" charset="utf-8">
-
-/******************************************************************************
-   Here you can customize the graph that is show in the overview page.
-   Fill in the js array, one line for each graph, ex:
-   var overview_data = [
-      "Category 1","group/host/service","Graph name",
-      "Category 1","group/host/service","Graph name",
-      "Category 2","domain/host/df","Host disks",
-   ];
-*/
-   var overview_data = [
-      "Apache 2", "darma/q3a/apache_accesses", "Accessi Apache",
-      "Apache 2", "darma/q3a/apache_processes", "Processi Apache",
-      "Mint 3", "darma/localhost/df", "Disks %",
-      "Mint 3", "darma/localhost/df_inode", "Disks inodes",
-      "Mint 3", "darma/q3a/apt_all", "APT",
-   ];
-/*****************************************************************************/
-
-
+<TMPL_INCLUDE NAME="template.conf">
 var problems_data = { <TMPL_LOOP NAME='GROUPS'>
 	"<TMPL_VAR NAME='NAME'>": {
 		"nodes": { <TMPL_LOOP NAME='GROUPS'>
@@ -38,12 +19,16 @@ var problems_data = { <TMPL_LOOP NAME='GROUPS'>
 	},</TMPL_LOOP>
 	nop: false
 }
-
-
 </script>
 
 <div class="content">
-	<h1>Overview</h1>
+	<div class="starter">
+		<h1>Welcome to the dynamic template.</h1>
+		<p class="lead">
+			<br><br>
+			You can put all the graphs you like in this overview page,<br>
+			just edit the template.conf file in the template folder.</p>
+	</div>
 </div>
 
 <!--
