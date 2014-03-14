@@ -171,7 +171,9 @@ function OpenZoomModal(static_url) {
 
 function ReloadZoomImg() {
 	var start = $('#start_date').datepicker('getDate').getTime() / 1000;
+	start = start.toString().split(".")[0]; 
 	var stop = $('#stop_date').datepicker('getDate').getTime() / 1000;
+	stop = stop.toString().split(".")[0]; 
 
 	var img_url = "{0}/{1}-pinpoint={2},{3}.png?size_x={4}&size_y={5}"
 						.format($('#ZoomModal').data("cgi_url"),
