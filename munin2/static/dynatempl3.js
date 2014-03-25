@@ -1,4 +1,3 @@
-
 /*** Graphs Zoom in/out ***/
 function ZoomIN(elem) {
 	// get the original image size
@@ -45,7 +44,7 @@ function SwitchPeriod(period) {
 	var src;
 	$(".maincategory img").each( function (i, val) {
 		src = $(this).attr("src");
-		src = src.replace(/-.*$/, "-"+period+".png");
+		src = src.replace(/.*\/[a-zA-Z0-9_]-\..*$/, "-"+period+".png");
 		$(this).attr("src", src);
 	});
 	setCookie("period", period)
