@@ -45,7 +45,7 @@ function SwitchPeriod(period) {
 	var src;
 	$(".maincategory img").each( function (i, val) {
 		src = $(this).attr("src");
-		src = src.replace(/-.*$/, "-"+period+".png");
+		src = src.replace(/-(\w+).png$/, "-"+period+".png");
 		$(this).attr("src", src);
 	});
 	setCookie("period", period)
