@@ -126,7 +126,12 @@ function PopulateOverview(period) {
 
 		// search problem (warn or crit) in the problems struct
 		var s = name.split('/');
-		problem_class = problems_data[s[0]]['nodes'][s[1]]['graphs'][s[2]]
+		try {
+			problem_class = problems_data[s[0]]['nodes'][s[1]]['graphs'][s[2]]
+		} catch (e) {
+			// console.log("failure", e)
+			problem_class = ""
+		}
 
 		// inject the graph in the category div
 		$('#'+cat_id).append( $(document.createElement('div'))
